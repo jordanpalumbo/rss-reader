@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSS Newsfeed by Jordan Palumbo</title>
+  <link rel="stylesheet" href="newsfeed.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <h2>Jordan's Newsfeed</h2>
+  </header>
+
+  <div class="controls">
+    <textarea id="rss_feeds" rows="4" placeholder="Enter one RSS feed URL per line"></textarea>
+
+    <div class="controls-row">
+      <input type="text" id="keyword_filter" placeholder="Filter by keyword...">
+      <button id="fetch_button" type="button" onclick="call_feeds()">Fetch</button>
+    </div>
+  </div>
+
+  <div id="feed_container"></div>
+
+  <script src="newsfeed.js"></script>
+</body>
+</html>
