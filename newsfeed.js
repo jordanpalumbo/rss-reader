@@ -2,13 +2,13 @@ let allFeeds = [];
 
 // Function to fetch URL(s)
 async function fetch_feed(url, retries = 3) {
-  const PROXY = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+  const PROXY = `https://rss-proxy.palumbojordan9.workers.dev/?url=${encodeURIComponent(url)}`;
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
       const response = await fetch(PROXY);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      return data.contents;
+      const data = await response.text();
+      return data;
     } catch (error) {
       console.warn(`Attempt ${attempt} failed for ${url}: ${error.message}`);
       if (attempt === retries) throw error;
